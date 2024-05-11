@@ -28,3 +28,19 @@ Hour,Minute,Second,Usecond,Horiacc,Vertacc
 `csv_input 原始csv文件`
 `sqlite3_db_output db文件`
 提供一个测试文件
+
+## 概述
+
+```
++---------+          +---------------+
+| CSV DIR |--sense-->| inotify-tools |
++---------+          +---+-----------+
+                         |
+                         V
+                     +----------------+           +------------+
+                     | csvs-to-sqlite |--update-->| sqlite3 db |
+                     +----------------+           +------------+
+```
+
+sqlite3 可以多 Client 读，但只能一 Client 写
+
